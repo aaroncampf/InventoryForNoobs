@@ -25,7 +25,7 @@ End Code
         <div class="content-wrapper">
             <h2>Introduction</h2>
             <p>
-                Provide a general description of your APIs here.
+                Provide a general description of your APIs here. or Rex will...
             </p>
         </div>
     </section>
