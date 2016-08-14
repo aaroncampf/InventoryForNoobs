@@ -15,13 +15,10 @@ Public Class Database
 		MyBase.New("name=Database")
 	End Sub
 
-	' Add a DbSet for each entity type that you want to include in your model. For more information 
-	' on configuring and using a Code First model, see http:'go.microsoft.com/fwlink/?LinkId=390109.
-	' Public Overridable Property MyEntities() As DbSet(Of MyEntity)
+	''' <summary>Represents the an inventory</summary>
+	Public Overridable Property MasterInventory() As DbSet(Of MasterInventoryItem)
+
+	''' <summary>Represents All transactions made to items in the inventory</summary>
+	Public Overridable Property Transactions() As DbSet(Of Transaction)
 
 End Class
-
-'Public Class MyEntity
-'    Public Property Id() As Int32
-'    Public Property Name() As String
-'End Class
