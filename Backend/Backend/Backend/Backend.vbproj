@@ -205,6 +205,8 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.vb" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.vb" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.vb" />
+    <Compile Include="Controllers\MasterInventoryItemsController.vb" />
+    <Compile Include="Controllers\TransactionsController.vb" />
     <Compile Include="Database\Database.vb" />
     <Compile Include="Database\MasterInventoryItem.vb" />
     <Compile Include="Database\Transaction.vb" />
@@ -264,6 +266,7 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.vbhtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.vbhtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.vbhtml" />
+    <None Include="My Project\PublishProfiles\InventoryForNoobs - Web Deploy.pubxml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />

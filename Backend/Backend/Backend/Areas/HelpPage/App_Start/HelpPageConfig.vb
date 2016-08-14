@@ -30,29 +30,30 @@ Namespace Areas.HelpPage
             MessageId:="bsonspec",
             Justification:="Part of a URI.")>
         Public Sub Register(config As HttpConfiguration)
-            '' Uncomment the following to use the documentation from XML documentation file.
-            'config.SetDocumentationProvider(New XmlDocumentationProvider(HttpContext.Current.Server.MapPath("~/App_Data/XmlDocument.xml")))
+			'' Uncomment the following to use the documentation from XML documentation file.
+			'config.SetDocumentationProvider(New XmlDocumentationProvider(HttpContext.Current.Server.MapPath("~/App_Data/XmlDocument.xml")))
+			config.SetDocumentationProvider(New XmlDocumentationProvider(HttpContext.Current.Server.MapPath("~/bin/Backend.xml")))
 
-            '' Uncomment the following to use "sample string" as the sample for all actions that have string as the body parameter or return type.
-            '' Also, the string arrays will be used for IEnumerable(Of String). The sample objects will be serialized into different media type 
-            '' formats by the available formatters.
-            'config.SetSampleObjects(New Dictionary(Of Type, Object) From
-            '{
-            '     {GetType(String), "sample string"},
-            '     {GetType(IEnumerable(Of String)), New String() {"sample 1", "sample 2"}}
-            '})
+			'' Uncomment the following to use "sample string" as the sample for all actions that have string as the body parameter or return type.
+			'' Also, the string arrays will be used for IEnumerable(Of String). The sample objects will be serialized into different media type 
+			'' formats by the available formatters.
+			'config.SetSampleObjects(New Dictionary(Of Type, Object) From
+			'{
+			'     {GetType(String), "sample string"},
+			'     {GetType(IEnumerable(Of String)), New String() {"sample 1", "sample 2"}}
+			'})
 
-            ' Extend the following to provide factories for types not handled automatically (those lacking parameterless
-            ' constructors) or for which you prefer to use non-default property values. Line below provides a fallback
-            ' since automatic handling will fail and GeneratePageResult handles only a single type.
+			' Extend the following to provide factories for types not handled automatically (those lacking parameterless
+			' constructors) or for which you prefer to use non-default property values. Line below provides a fallback
+			' since automatic handling will fail and GeneratePageResult handles only a single type.
 #If Handle_PageResultOfT Then
             config.GetHelpPageSampleGenerator().SampleObjectFactories.Add(AddressOf GeneratePageResult)
 #End If
 
-            ' Extend the following to use a preset object directly as the sample for all actions that support a media
-            ' type, regardless of the body parameter or return type. The lines below avoid display of binary content.
-            ' The BsonMediaTypeFormatter (if available) is not used to serialize the TextSample object.
-            config.SetSampleForMediaType(
+			' Extend the following to use a preset object directly as the sample for all actions that support a media
+			' type, regardless of the body parameter or return type. The lines below avoid display of binary content.
+			' The BsonMediaTypeFormatter (if available) is not used to serialize the TextSample object.
+			config.SetSampleForMediaType(
                 New TextSample("Binary JSON content. See http://bsonspec.org for details."),
                 New MediaTypeHeaderValue("application/bson"))
 

@@ -22,6 +22,8 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home", New With { .area = "" }, Nothing)</li>
                     <li>@Html.ActionLink("API", "Index", "Help", New With { .area = "" }, Nothing)</li>
+					<li>@Html.ActionLink("Seed", "Seed", "Home", New With {.area = ""}, Nothing)</li>
+
                 </ul>
             </div>
         </div>
