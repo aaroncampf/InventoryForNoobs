@@ -13,7 +13,7 @@ AN INVENTORY MANAGEMENT SYSTEM PROJECT
 
 
 <strong>The Dark Lord of the Dot Net </strong>  aaroncampf@gmail.com
-<thin>&&</thin>
+<thin> && </thin>
 <strong>Rex the i'll Dev </strong> rex@hackd.design
 
 
@@ -38,7 +38,8 @@ From your terminal window execute the following commands, replace {project direc
 >   npm start
 
 Any questions email rex@hackd.design
-
+<hr>
+<hr>
 The Unlicense License (ULL)
 
 Copyright (c) 2016 InventoryForNoobs

@@ -1,3 +1,6 @@
+console.log('inventoryPage called');
+
+
 import { Component } from '@angular/core';
 
 /**
@@ -6,14 +9,15 @@ import { Component } from '@angular/core';
  * @author rex@hackd.design
  */
 @Component ({
-    selector: 'front-page',
+    selector: 'inventory-page',
     template: `
-        <h1> Front Page </h1>
+        <div class="wrapper">
+            <h1> Inventory Page </h1>
+        </div>
     `
 })
 
-export class FrontPage {
+export class InventoryPage {
     constructor() {
-
     }
 };
