@@ -31,8 +31,11 @@ The following method will work from a linux based machine running NodeJS.
 From your terminal window execute the following commands, replace {project directory name} with your folder name that you choose or the default from the project. 
 
 >   git clone {project directory name} 
+<br>
 >   cd /{project directory name}/Frontend/
+<br>
 >   npm install
+<br>
 >   npm start
 
 Any questions email rex@hackd.design
