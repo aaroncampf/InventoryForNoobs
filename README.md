@@ -12,17 +12,16 @@
 AN INVENTORY MANAGEMENT SYSTEM PROJECT
 
 
-by 
-<strong>The Dark Lord of the Dot Net </string  aaroncampf@gmail.com
-&&
-Rex the i'll Dev rex@hackd.design
+<strong>The Dark Lord of the Dot Net </strong>  aaroncampf@gmail.com
+<thin>&&</thin>
+<strong>Rex the i'll Dev </strong> rex@hackd.design
 
 
 
 <h1>FRONT END</h1>
 
-<h4> Deploy Instruction </h4>
-Primary Objective:
+<h2> Deploy Instruction </h2>
+<strong>Primary Objective:</strong>
 <br>
 We need to transpile the ts. 
 <hr>
