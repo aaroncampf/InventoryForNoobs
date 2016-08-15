@@ -1,17 +1,11 @@
-console.log("app component fired");
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'my-app',
-  template: `
- <div class="container">
+<div class="container-fluid">
     <div class="row">
         <span class="col">
             <h1>A Noobs Inventory</h1>        
         </span> 
     </div>
     <div class="row">
-        <span class="col-xs-4">
+        <span class="col">
             <hr> 
             A project that is in development by
             <h4> The Dark Lord of the Dot Net</h4>
@@ -21,17 +15,9 @@ import { Component } from '@angular/core';
             updated: 9-14-2016
             <h1>N A V</h1>
         </span>
-        <span class="col-xs-8">
-            <front-page></front-page>
+        <span class="col">
+            This is the active View
         </span>
     </div>
 
 </div>
-  `
-  
-  
-})
-
-export class AppComponent { 
-  constructor(){};
-}

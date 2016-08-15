@@ -13,10 +13,29 @@ AN INVENTORY MANAGEMENT SYSTEM PROJECT
 
 
 by 
-The Dark Lord of the Dot Net  aaroncampf@gmail.com
+<strong>The Dark Lord of the Dot Net </string  aaroncampf@gmail.com
 &&
 Rex the i'll Dev rex@hackd.design
 
+
+
+<h1>FRONT END</h1>
+
+<h4> Deploy Instruction </h4>
+Primary Objective:
+<br>
+We need to transpile the ts. 
+<hr>
+The following method will work from a linux based machine running NodeJS.  
+
+From your terminal window execute the following commands, replace {project directory name} with your folder name that you choose or the default from the project. 
+
+>   git clone {project directory name} 
+>   cd /{project directory name}/Frontend/
+>   npm install
+>   npm start
+
+Any questions email rex@hackd.design
 
 The MIT License (MIT)
 

@@ -9,8 +9,6 @@ import { Component } from '@angular/core';
     selector: 'front-page',
     template: `
         <h1> Front Page </h1>
-
-        I AM A FRONT PAGE
     `
 })
 
