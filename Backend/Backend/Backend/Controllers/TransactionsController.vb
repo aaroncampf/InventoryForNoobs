@@ -30,58 +30,58 @@ Namespace Controllers
 			Return Ok(transaction)
 		End Function
 
-		' PUT: api/Transactions/5
-		<ResponseType(GetType(Void))>
-		Function PutTransaction(ByVal id As Integer, ByVal transaction As Transaction) As IHttpActionResult
-			If Not ModelState.IsValid Then
-				Return BadRequest(ModelState)
-			End If
+		'' PUT: api/Transactions/5
+		'<ResponseType(GetType(Void))>
+		'Function PutTransaction(ByVal id As Integer, ByVal transaction As Transaction) As IHttpActionResult
+		'	If Not ModelState.IsValid Then
+		'		Return BadRequest(ModelState)
+		'	End If
 
-			If Not id = transaction.id Then
-				Return BadRequest()
-			End If
+		'	If Not id = transaction.id Then
+		'		Return BadRequest()
+		'	End If
 
-			db.Entry(transaction).State = EntityState.Modified
+		'	db.Entry(transaction).State = EntityState.Modified
 
-			Try
-				db.SaveChanges()
-			Catch ex As DbUpdateConcurrencyException
-				If Not (TransactionExists(id)) Then
-					Return NotFound()
-				Else
-					Throw
-				End If
-			End Try
+		'	Try
+		'		db.SaveChanges()
+		'	Catch ex As DbUpdateConcurrencyException
+		'		If Not (TransactionExists(id)) Then
+		'			Return NotFound()
+		'		Else
+		'			Throw
+		'		End If
+		'	End Try
 
-			Return StatusCode(HttpStatusCode.NoContent)
-		End Function
+		'	Return StatusCode(HttpStatusCode.NoContent)
+		'End Function
 
-		' POST: api/Transactions
-		<ResponseType(GetType(Transaction))>
-		Function PostTransaction(ByVal transaction As Transaction) As IHttpActionResult
-			If Not ModelState.IsValid Then
-				Return BadRequest(ModelState)
-			End If
+		'' POST: api/Transactions
+		'<ResponseType(GetType(Transaction))>
+		'Function PostTransaction(ByVal transaction As Transaction) As IHttpActionResult
+		'	If Not ModelState.IsValid Then
+		'		Return BadRequest(ModelState)
+		'	End If
 
-			db.Transactions.Add(transaction)
-			db.SaveChanges()
+		'	db.Transactions.Add(transaction)
+		'	db.SaveChanges()
 
-			Return CreatedAtRoute("DefaultApi", New With {.id = transaction.id}, transaction)
-		End Function
+		'	Return CreatedAtRoute("DefaultApi", New With {.id = transaction.id}, transaction)
+		'End Function
 
-		' DELETE: api/Transactions/5
-		<ResponseType(GetType(Transaction))>
-		Function DeleteTransaction(ByVal id As Integer) As IHttpActionResult
-			Dim transaction As Transaction = db.Transactions.Find(id)
-			If IsNothing(transaction) Then
-				Return NotFound()
-			End If
+		'' DELETE: api/Transactions/5
+		'<ResponseType(GetType(Transaction))>
+		'Function DeleteTransaction(ByVal id As Integer) As IHttpActionResult
+		'	Dim transaction As Transaction = db.Transactions.Find(id)
+		'	If IsNothing(transaction) Then
+		'		Return NotFound()
+		'	End If
 
-			db.Transactions.Remove(transaction)
-			db.SaveChanges()
+		'	db.Transactions.Remove(transaction)
+		'	db.SaveChanges()
 
-			Return Ok(transaction)
-		End Function
+		'	Return Ok(transaction)
+		'End Function
 
 		Protected Overrides Sub Dispose(ByVal disposing As Boolean)
 			If (disposing) Then

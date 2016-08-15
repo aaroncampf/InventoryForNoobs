@@ -1,5 +1,8 @@
-﻿''' <summary>Represents a single item within the inventory</summary>
+﻿Imports System.ComponentModel.DataAnnotations
+''' <summary>Represents a single item within the inventory</summary>
 Public Class MasterInventoryItem
+	Implements IValidatableObject
+
 	''' <summary>The key value of the table</summary>
 	Public Property id As Integer
 	''' <summary>The name of the item</summary>
@@ -15,5 +18,16 @@ Public Class MasterInventoryItem
 	''' <summary>A list of all transactions made with this item</summary>
 	Public Property Transactions As New HashSet(Of Transaction)
 
+	Public Function Validate(validationContext As ValidationContext) As IEnumerable(Of ValidationResult) Implements IValidatableObject.Validate
+		If Qty < 0 Then
+			Return {New ValidationResult("Qty is less then 0", {NameOf(Qty)})}
+		End If
+
+		Return Nothing
+	End Function
+
 	'Public Property Price As String
+
+
+
 End Class

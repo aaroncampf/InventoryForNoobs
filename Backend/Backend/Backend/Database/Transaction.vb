@@ -7,5 +7,7 @@ Public Class Transaction
 	''' <summary>How many items where transfered</summary>
 	Public Property Amount As Integer
 	''' <summary>The item that the transaction was for</summary>
+	<Runtime.Serialization.IgnoreDataMember>
+	<Newtonsoft.Json.JsonIgnore>
 	Public Property InventoryItem As MasterInventoryItem
 End Class

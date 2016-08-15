@@ -13,9 +13,11 @@
 	''' </summary>
 	''' <returns></returns>
 	Function Seed() As ActionResult
+		IO.Directory.CreateDirectory(Server.MapPath("~/App_Data/"))
 		Dim db As New Database
 		db.Database.Delete()
 		db.Database.Create()
+
 
 		Dim Item1 As New MasterInventoryItem With {.Name = "Soap", .Location = "1", .Qty = 0}
 
