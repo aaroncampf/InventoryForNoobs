@@ -37,6 +37,7 @@
     <OutputPath>bin\</OutputPath>
     <DocumentationFile>Backend.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -266,7 +267,9 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.vbhtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.vbhtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.vbhtml" />
+    <None Include="My Project\PublishProfiles\InventoryForNoobs - Web Deploy %282%29.pubxml" />
     <None Include="My Project\PublishProfiles\InventoryForNoobs - Web Deploy.pubxml" />
+    <Content Include="Views\Home\Error.vbhtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />

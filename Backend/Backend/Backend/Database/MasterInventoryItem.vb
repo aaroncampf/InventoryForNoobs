@@ -1,5 +1,6 @@
 ﻿Imports System.ComponentModel.DataAnnotations
 ''' <summary>Represents a single item within the inventory</summary>
+<Serializable>
 Public Class MasterInventoryItem
 	Implements IValidatableObject
 

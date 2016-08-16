@@ -7,19 +7,43 @@
 		Return View()
 	End Function
 
+	Function [Error]() As ActionResult
+		ViewData("Title") = "Error"
+
+		Return View()
+	End Function
+
 
 	''' <summary>
 	''' Seeds the database with default data after deleting it
 	''' </summary>
 	''' <returns></returns>
-	Function Seed() As ActionResult
+	Function Seed_1() As ActionResult
+
+		'NEVER USE RedirectToActionPermanent!!! Permanent CAUSES your links to be wrong!!
+		'NEVER USE RedirectToActionPermanent!!! Permanent CAUSES your links to be wrong!!
+		'Try
+		'	SeedNow()
+		'	Return RedirectToActionPermanent(NameOf(Index))
+		'Catch ex As Exception
+		'	Return RedirectToActionPermanent(NameOf([Error]))
+		'End Try
+		'NEVER USE RedirectToActionPermanent!!! Permanent CAUSES your links to be wrong!!
+		'NEVER USE RedirectToActionPermanent!!! Permanent CAUSES your links to be wrong!!
+
+		Try
+			SeedNow()
+			Return RedirectToAction(NameOf(Index))
+		Catch ex As Exception
+			Return RedirectToAction(NameOf([Error]))
+		End Try
+	End Function
+
+	Private Sub SeedNow()
 		IO.Directory.CreateDirectory(Server.MapPath("~/App_Data/"))
 		Dim db As New Database
 		db.Database.Delete()
 		db.Database.Create()
-
-
-		Dim Item1 As New MasterInventoryItem With {.Name = "Soap", .Location = "1", .Qty = 0}
 
 		db.MasterInventory.AddRange({
 			New MasterInventoryItem With {.Name = "#4 BIO BOX KRAFT FTB4N  ", .Location = "1", .Qty = 0},
@@ -41,7 +65,7 @@
 			New MasterInventoryItem With {.Name = "#500  FOOD TRAY 5LB HEARTHSTONE", .Location = "17", .Qty = 0},
 			New MasterInventoryItem With {.Name = "#250  FOOD TRAY  2.5LB HEARTHSTONE", .Location = "18", .Qty = 0},
 			New MasterInventoryItem With {.Name = "C-K516W 16oz WHITE HOT CUP", .Location = "19", .Qty = 0}
-		})
+			})
 
 		db.SaveChanges()
 
@@ -81,10 +105,7 @@
 			})
 		Next
 
-
 		db.SaveChanges()
-
-		Return RedirectToActionPermanent(NameOf(Index))
-	End Function
+	End Sub
 
 End Class

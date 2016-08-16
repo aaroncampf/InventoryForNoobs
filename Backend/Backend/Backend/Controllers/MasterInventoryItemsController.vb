@@ -3,12 +3,16 @@ Imports System.Data.Entity.Infrastructure
 Imports System.Net
 Imports System.Web.Http
 Imports System.Web.Http.Description
+Imports Newtonsoft.Json.Linq
 
 Namespace Controllers
 	Public Class MasterInventoryItemsController
 		Inherits ApiController
 
 		Private db As New Database
+
+
+
 
 		''' <summary>returns all inventory items</summary>
 		Function GetMasterInventory() As IQueryable(Of MasterInventoryItem)
@@ -40,16 +44,18 @@ Namespace Controllers
 		''' 
 		''' </remarks>
 		<ResponseType(GetType(Void))>
-		Function PutMasterInventoryItem(ByVal id As Integer, ByVal masterInventoryItem As MasterInventoryItem) As IHttpActionResult
+		Function PutMasterInventoryItem(ByVal id As Integer, ByVal masterInventoryItem As JObject) As IHttpActionResult
+			Dim Frack As MasterInventoryItem = masterInventoryItem.ToObject(Of MasterInventoryItem)
+
 			If Not ModelState.IsValid Then
 				Return BadRequest(ModelState)
 			End If
 
-			If Not id = masterInventoryItem.id Then
+			If Not id = Frack.id Then
 				Return BadRequest()
 			End If
 
-			Dim Prop = db.Entry(masterInventoryItem).Property(NameOf(masterInventoryItem.Qty))
+			Dim Prop = db.Entry(Frack).Property(NameOf(Frack.Qty))
 			If Prop.IsModified Then
 				Dim Change As Integer
 				If Val(Prop.OriginalValue) > Val(Prop.CurrentValue) Then
@@ -59,7 +65,7 @@ Namespace Controllers
 				End If
 
 				'Dim Transaction As New Transaction With {.Amount = Math.Abs(Prop.OriginalValue) - Math.Abs(Prop.CurrentValue), .Date = Date.Now, .InventoryItem = masterInventoryItem}
-				Dim Transaction As New Transaction With {.Amount = Val(Prop.OriginalValue) - Val(Prop.CurrentValue), .Date = Date.Now, .InventoryItem = masterInventoryItem}
+				Dim Transaction As New Transaction With {.Amount = Val(Prop.OriginalValue) - Val(Prop.CurrentValue), .Date = Date.Now, .InventoryItem = Frack}
 				db.Transactions.Add(Transaction)
 			End If
 
@@ -84,15 +90,19 @@ Namespace Controllers
 		''' <param name="masterInventoryItem">An object representing a MasterInventoryItem with all the values you want</param>
 		''' <returns></returns>
 		<ResponseType(GetType(MasterInventoryItem))>
-		Function PostMasterInventoryItem(ByVal masterInventoryItem As MasterInventoryItem) As IHttpActionResult
+		Function PostMasterInventoryItem(<FromBody> ByVal masterInventoryItem As JObject) As IHttpActionResult
+			'Function PostMasterInventoryItem(<FromBody> ByVal masterInventoryItem As MasterInventoryItem) As IHttpActionResult
+			Dim Test As MasterInventoryItem = masterInventoryItem.ToObject(Of MasterInventoryItem)
+
+
 			If Not ModelState.IsValid Then
 				Return BadRequest(ModelState)
 			End If
 
-			db.MasterInventory.Add(masterInventoryItem)
+			db.MasterInventory.Add(Test)
 			db.SaveChanges()
 
-			Return CreatedAtRoute("DefaultApi", New With {.id = masterInventoryItem.id}, masterInventoryItem)
+			Return CreatedAtRoute("DefaultApi", New With {.id = Test.id}, Test)
 		End Function
 
 		''' <summary>
@@ -102,12 +112,22 @@ Namespace Controllers
 		''' <returns></returns>
 		<ResponseType(GetType(MasterInventoryItem))>
 		Function DeleteMasterInventoryItem(ByVal id As Integer) As IHttpActionResult
-			Dim masterInventoryItem As MasterInventoryItem = db.MasterInventory.Find(id)
+			Dim masterInventoryItem As MasterInventoryItem = db.MasterInventory.Where(Function(x) x.id = id).Include(Function(x) x.Transactions).FirstOrDefault
 			If IsNothing(masterInventoryItem) Then
 				Return NotFound()
 			End If
 
+
+			'TODO: Add in Cascade Delete for reals
+			'TODO: Add in Cascade Delete for reals
 			db.MasterInventory.Remove(masterInventoryItem)
+
+			For Each Item In masterInventoryItem.Transactions
+				db.Transactions.Remove(Item)
+			Next
+			'TODO: Add in Cascade Delete for reals
+			'TODO: Add in Cascade Delete for reals
+
 			db.SaveChanges()
 
 			Return Ok(masterInventoryItem)
