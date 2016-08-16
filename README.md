@@ -40,6 +40,8 @@ From your terminal window execute the following commands, replace {project direc
 Any questions email rex@hackd.design
 <hr>
 <hr>
+
+<h1> Licnese </h1>
 The Unlicense License (ULL)
 
 Copyright (c) 2016 InventoryForNoobs

@@ -20,7 +20,6 @@ export class InventoryData {
       return Promise.resolve(this.data);
 
     }
-
     // don't have the data yet
     return new Promise(resolve => {
       this.http.get('http://inventoryfornoobs.azurewebsites.net/api/MasterInventoryItems')

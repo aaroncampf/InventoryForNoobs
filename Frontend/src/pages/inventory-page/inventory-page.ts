@@ -1,7 +1,7 @@
 console.log('inventoryPage called');
 import { Component } from '@angular/core';
 import { InventoryTable } from '../../components/inventory-table/inventory-table';
-/** 
+/**
  * Inventory for NOOBS!
  * FrontPage component for rendering the landing page view
  * @author rex@hackd.design

@@ -1,0 +1,120 @@
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%; }
+
+body {
+  margin: 2em; }
+
+/*
+ * See https://github.com/angular/angular.io/blob/master/public/docs/_examples/styles.css
+ * for the full set of master styles used by the documentation samples
+ */
+/*
+OTHER 
+
+*/
+/* Master Styles */
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%; }
+
+h2, h3 {
+  color: #444;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter; }
+
+body {
+  margin: 2em; }
+
+body, input[text], button {
+  color: #888;
+  font-family: Cambria, Georgia; }
+
+/* . . . */
+/* everywhere else */
+* {
+  font-family: Arial, Helvetica, sans-serif; }
+
+/*
+Navigation Styles
+*/
+.nav ul {
+  text-decoration: none;
+  list-style-type: none; }
+
+.nav h1 {
+  font-size: 1.2em;
+  color: #999;
+  margin-bottom: 0; }
+
+.nav h2 {
+  font-size: 2em;
+  margin-top: 0;
+  padding-top: 0; }
+
+.nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px; }
+
+.nav a:visited, a:link {
+  color: #607D8B; }
+
+.nav a:hover {
+  text-decoration: none;
+  color: #039be5;
+  background-color: #CFD8DC; }
+
+.nav a.active {
+  color: #039be5; }
+
+/*
+OTHER 
+
+*/
+.error {
+  color: red; }
+
+button.delete-button {
+  float: right;
+  background-color: gray !important;
+  color: white; }
+
+/*
+Main 
+*/
+.noobNames * {
+  line-height: 0.3em;
+  font-size: .9em; }
+
+/*
+Master Detail Table 
+
+*/
+.inv .header span {
+  height: 81px; }
+.inv .header .blank {
+  height: 100px; }
+.inv .table span.cell {
+  height: 100px;
+  border: solid 1px;
+  background: lightcyan; }
+.inv .table span.blank {
+  height: 100px; }
+
+.rowWrapper {
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75); }
+
+/*
+OTHER 
+
+*/
+
+/*# sourceMappingURL=main.css.map */

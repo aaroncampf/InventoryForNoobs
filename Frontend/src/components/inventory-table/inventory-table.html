@@ -1,0 +1,32 @@
+<h1> I am a table </h1>
+<div class="container">
+
+        <div class="row">
+            <span class="col">Title</span>
+        </div>
+        <div class="row">
+            <span class="col-xs-10">ID</span>
+            <span class="col-xs-10">Name</span>
+            <span class="col-xs-10">QTY</span>
+            <span class="col-xs-10">Location</span>
+            <span class="col-xs-10">Value</span>
+            <span class="col-xs-10">Meta</span>
+            <span class="col-xs-10">transaction</span>
+            <span class="col-xs-10"> <button>^</button></span>
+        </div>
+        <div class="row" *ngFor="let row of rows">
+            <span class="col-xs-10">{{row.id}}</span>
+            <span class="col-xs-10">{{row.name}}</span>
+            <span class="col-xs-10">{{row.qty}}</span>
+            <span class="col-xs-10">{{row.location}}</span>
+            <span class="col-xs-10">{{row.value}}</span>
+            <span class="col-xs-10">{{row.meta}}</span>
+            <span class="col-xs-10">{{row.transaction}}</span>
+            <span class="col-xs-10">
+                <buton>Edit</buton>
+                <buton>Remove</buton>
+            </span>
+        </div>
+
+
+</div>
