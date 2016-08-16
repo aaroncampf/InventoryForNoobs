@@ -8,9 +8,10 @@ import { Component } from '@angular/core';
 @Component ({
     selector: 'front-page',
     template: `
-        <h1> Front Page </h1>
+    <img src="resources/img/favicon/android-icon-192x192.png" >
+        <h4> Welcome to a noobs inventory remote management super awesome software project. </h4>
 
-        I AM A FRONT PAGE
+        
     `
 })
 

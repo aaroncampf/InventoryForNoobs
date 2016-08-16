@@ -6,11 +6,15 @@ import { Component } from '@angular/core';
  * @author rex@hackd.design
  */
 @Component ({
-    selector: 'nav',
+    selector: 'nav-bar',
     template: `
-        <h2>Nav Bar</h2> 
+    <h2> N A V </h2>
+       <div class="nav">
+                <a routerLink="/noobs">Home</a>
+                <br>
+                <a routerLink="/inventory">Inventory</a>
+        </div>
     `
-
 })
 
 export class NavBar {

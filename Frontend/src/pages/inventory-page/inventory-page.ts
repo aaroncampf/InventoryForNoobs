@@ -1,23 +1,22 @@
 console.log('inventoryPage called');
-
-
 import { Component } from '@angular/core';
-
-/**
+import { InventoryTable } from '../../components/inventory-table/inventory-table';
+/** 
  * Inventory for NOOBS!
  * FrontPage component for rendering the landing page view
  * @author rex@hackd.design
  */
 @Component ({
+    directives: [InventoryTable],
     selector: 'inventory-page',
     template: `
-        <div class="wrapper">
-            <h1> Inventory Page </h1>
-        </div>
+
+            <h1> The Inventory </h1>
+            <inventory-table></inventory-table>
+
     `
 })
 
 export class InventoryPage {
-    constructor() {
-    }
+    constructor() { }
 };

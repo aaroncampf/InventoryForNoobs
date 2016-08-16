@@ -1,35 +1,32 @@
 <div class="container">
     <div class="row">
         <span class="col text-center">
-            <h1>A Noobs Inventory</h1>        
+            <h1>A Noob's Inventory</h1>        
             <hr> 
         </span>
     </div>
     <div class="row">
-        <span class="col-xs-4">
+        <span class="col-xs-4 text-center">
             A project that is in development by
-            <h4> <span class="text-nowrap">The Dark Lord of the Dot Net Framework</span></h4> <a href="mailto:aaroncampf@gmail.com"> email </a>
-        <br>
-        <h4> Rex the i'll Dev </h4> <a href="mailto:rex@hackd.design"> email </a>
-        <hr>
-        <h1>N A V</h1>
-        <ul>
-            <li>
-                <button>
-                  Home
-
-                </button>
-            </li>
-            <li>
-                <button>
-                  Inventory
-
-                </button>
-            </li>
-        </ul>
+            <span class="text-center">
+                <h4> <span class="text-nowrap">The Dark Lord </span></h4>
+                <h4><span class="text-nowrap">of the </span></h4>
+                <h4><span class="text-nowrap">Dot Net Framework </span></h4>
+                <a href="mailto:aaroncampf@gmail.com"> email </a>
+            </span>
+            <br>
+            <h4> Rex " the ill " Dev</h4> 
+            <a href="mailto:rex@hackd.design"> email </a>
+            <hr>
+            <h1>N A V</h1>
+            <div class="nav">
+                <a routerLink="/noobs">Home</a>
+                <br>
+                <a routerLink="/inventory">Inventory</a>
+            </div>
         </span>
         <span class="col-xs-8 text-center">
-            <front-page></front-page>
+            <router-outlet></router-outlet>
         </span>
     </div>
 </div>
