@@ -1,23 +1,19 @@
 import { Component } from '@angular/core';
-//import { InventoryData } from '../../providers/inventory-data/inventory-data';
+import { InventoryData } from '../../providers/inventory-data/inventory-data';
 import { InventoryRow } from './inventory-row';
-
 
 // data service 
 
 @Component({
-
     selector: 'inventory-table',
-  //  providers: [InventoryData], 
+    providers: [InventoryData], 
     template: `
 <div class="container">
-
         <div class="row">
             <span class="col-xs-12"><h1 class="text-left">The Master List :)</h1>
             <br>
             <hr>
             </span>
-
         </div>
         <div class="inv row">
             <span class="header col-xs-2 col-sm-1">ID</span>
@@ -68,8 +64,8 @@ export class InventoryTable {
 
     }
    /**
-    *   CORS issue 
-    
+    *   CORS issue  
+
     *   Call data from the DB
     getInventoryData() {
         this.inventoryData.loadInventoryData()
