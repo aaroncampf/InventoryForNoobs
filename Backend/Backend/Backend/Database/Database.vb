@@ -21,4 +21,7 @@ Public Class Database
 	''' <summary>Represents All transactions made to items in the inventory</summary>
 	Public Overridable Property Transactions() As DbSet(Of Transaction)
 
+    Public Overridable Property Customers() As DbSet(Of Customer)
+
+    Public Overridable Property Orders() As DbSet(Of SAHeader)
 End Class

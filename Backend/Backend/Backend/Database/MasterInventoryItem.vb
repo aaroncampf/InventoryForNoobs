@@ -12,12 +12,20 @@ Public Class MasterInventoryItem
 	Public Property Qty As Integer
 	''' <summary>The location of the item</summary>
 	Public Property Location As String
-	''' <summary>The value of the item (think accounting)</summary>
-	Public Property Value As Decimal
+
+	' ''' <summary>The value of the item (think accounting)</summary>
+	'   Public Property Value As Decimal
+
 	''' <summary>A JSON object filled with arbitrary data (think MongoDB)</summary>
 	Public Property Meta As String
 	''' <summary>A list of all transactions made with this item</summary>
 	Public Property Transactions As New HashSet(Of Transaction)
+	''' <summary>The vendor you currently buy the item from</summary> 
+	Public Property Vendor As Vendor
+
+	Public Property CostOfGood As Decimal
+
+
 
 	Public Function Validate(validationContext As ValidationContext) As IEnumerable(Of ValidationResult) Implements IValidatableObject.Validate
 		If Qty < 0 Then
@@ -26,9 +34,4 @@ Public Class MasterInventoryItem
 
 		Return Nothing
 	End Function
-
-	'Public Property Price As String
-
-
-
 End Class
