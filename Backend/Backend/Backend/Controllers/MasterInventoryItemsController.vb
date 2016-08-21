@@ -52,19 +52,19 @@ Namespace Controllers
 				Return BadRequest()
 			End If
 
-			Dim Prop = db.Entry(Frack).Property(NameOf(Frack.Qty))
-			If Prop.IsModified Then
-				Dim Change As Integer
-				If Val(Prop.OriginalValue) > Val(Prop.CurrentValue) Then
-					Change = -(Val(Prop.OriginalValue) - Val(Prop.CurrentValue))
-				Else
-					Change = (Val(Prop.OriginalValue) - Val(Prop.CurrentValue))
-				End If
+			'Dim Prop = db.Entry(Frack).Property(NameOf(Frack.Qty))
+			'If Prop.IsModified Then
+			'	Dim Change As Integer
+			'	If Val(Prop.OriginalValue) > Val(Prop.CurrentValue) Then
+			'		Change = -(Val(Prop.OriginalValue) - Val(Prop.CurrentValue))
+			'	Else
+			'		Change = (Val(Prop.OriginalValue) - Val(Prop.CurrentValue))
+			'	End If
 
-				'Dim Transaction As New Transaction With {.Amount = Math.Abs(Prop.OriginalValue) - Math.Abs(Prop.CurrentValue), .Date = Date.Now, .InventoryItem = masterInventoryItem}
-				Dim Transaction As New Transaction With {.Amount = Val(Prop.OriginalValue) - Val(Prop.CurrentValue), .Date = Date.Now, .InventoryItem = Frack}
-				db.Transactions.Add(Transaction)
-			End If
+			'	'Dim Transaction As New Transaction With {.Amount = Math.Abs(Prop.OriginalValue) - Math.Abs(Prop.CurrentValue), .Date = Date.Now, .InventoryItem = masterInventoryItem}
+			'	Dim Transaction As New Transaction With {.Amount = Val(Prop.OriginalValue) - Val(Prop.CurrentValue), .Date = Date.Now, .InventoryItem = Frack}
+			'	db.Transactions.Add(Transaction)
+			'End If
 
 			db.Entry(masterInventoryItem).State = EntityState.Modified
 
@@ -109,7 +109,8 @@ Namespace Controllers
 		''' <returns></returns>
 		<ResponseType(GetType(MasterInventoryItem))>
 		Function DeleteMasterInventoryItem(ByVal id As Integer) As IHttpActionResult
-			Dim masterInventoryItem As MasterInventoryItem = db.MasterInventory.Where(Function(x) x.id = id).Include(Function(x) x.Transactions).FirstOrDefault
+			'Dim masterInventoryItem As MasterInventoryItem = db.MasterInventory.Where(Function(x) x.id = id).Include(Function(x) x.Transactions).FirstOrDefault
+			Dim masterInventoryItem As MasterInventoryItem = db.MasterInventory.FirstOrDefault(Function(x) x.id = id)
 			If IsNothing(masterInventoryItem) Then
 				Return NotFound()
 			End If
@@ -119,9 +120,9 @@ Namespace Controllers
 			'TODO: Add in Cascade Delete for reals
 			db.MasterInventory.Remove(masterInventoryItem)
 
-			For Each Item In masterInventoryItem.Transactions
-				db.Transactions.Remove(Item)
-			Next
+			'For Each Item In masterInventoryItem.Transactions
+			'	db.Transactions.Remove(Item)
+			'Next
 			'TODO: Add in Cascade Delete for reals
 			'TODO: Add in Cascade Delete for reals
 

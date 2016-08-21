@@ -216,12 +216,13 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.vb" />
     <Compile Include="Controllers\MasterInventoryItemsController.vb" />
     <Compile Include="Controllers\Ordering Feature Temp Folder\CustomersController.vb" />
+    <Compile Include="Controllers\Ordering Feature Temp Folder\VendorsController.vb" />
     <Compile Include="Controllers\TransactionsController.vb" />
     <Compile Include="Database\Database.vb" />
     <Compile Include="Database\MasterInventoryItem.vb" />
     <Compile Include="Database\Ordering Feature Temp Folder\Customer.vb" />
-    <Compile Include="Database\Ordering Feature Temp Folder\SADetail.vb" />
-    <Compile Include="Database\Ordering Feature Temp Folder\SAHeader.vb" />
+    <Compile Include="Database\Ordering Feature Temp Folder\OrderLine.vb" />
+    <Compile Include="Database\Ordering Feature Temp Folder\Order.vb" />
     <Compile Include="Database\Ordering Feature Temp Folder\Transaction.vb" />
     <Compile Include="Database\Ordering Feature Temp Folder\Vendor.vb" />
     <Compile Include="Global.asax.vb">
@@ -243,7 +244,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Controllers\HomeController.vb" />
-    <Compile Include="Controllers\ValuesController.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

@@ -2,7 +2,7 @@
 ''' <summary>Represents a single item within the inventory</summary>
 <Serializable>
 Public Class MasterInventoryItem
-	Implements IValidatableObject
+	'Implements IValidatableObject
 
 	''' <summary>The key value of the table</summary>
 	Public Property id As Integer
@@ -18,20 +18,21 @@ Public Class MasterInventoryItem
 
 	''' <summary>A JSON object filled with arbitrary data (think MongoDB)</summary>
 	Public Property Meta As String
-	''' <summary>A list of all transactions made with this item</summary>
-	Public Property Transactions As New HashSet(Of Transaction)
+	'''' <summary>A list of all transactions made with this item</summary>
+	'Public Property Transactions As New HashSet(Of Transaction)
 	''' <summary>The vendor you currently buy the item from</summary> 
+	<Runtime.Serialization.IgnoreDataMember, Newtonsoft.Json.JsonIgnore>
 	Public Property Vendor As Vendor
 
 	Public Property CostOfGood As Decimal
 
 
 
-	Public Function Validate(validationContext As ValidationContext) As IEnumerable(Of ValidationResult) Implements IValidatableObject.Validate
-		If Qty < 0 Then
-			Return {New ValidationResult("Qty is less then 0", {NameOf(Qty)})}
-		End If
+	'Public Function Validate(validationContext As ValidationContext) As IEnumerable(Of ValidationResult) Implements IValidatableObject.Validate
+	'	If Qty < 0 Then
+	'		Return {New ValidationResult("Qty is less then 0", {NameOf(Qty)})}
+	'	End If
 
-		Return Nothing
-	End Function
+	'	Return Nothing
+	'End Function
 End Class

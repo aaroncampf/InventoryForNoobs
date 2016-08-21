@@ -45,6 +45,12 @@
 		db.Database.Delete()
 		db.Database.Create()
 
+		db.Customers.AddRange({
+			New Customer With {.Name = "AJP Northwest", .Address = "1120 SE Morrison St", .City = "Portland", .State = "OR", .Zip = 97214, .Email = "", .Phone = ""},
+			New Customer With {.Name = "Brentwood Corp", .Address = "453 Industrial Way", .City = "Molalla", .State = "OR", .Zip = "Molalla", .Email = "", .Phone = "(503) 829-7366"}
+		})
+
+
 		db.MasterInventory.AddRange({
 			New MasterInventoryItem With {.Name = "#4 BIO BOX KRAFT FTB4N  ", .Location = "1", .Qty = 0},
 			New MasterInventoryItem With {.Name = "4304 C-FOLD WHITE TOWEL", .Location = "2", .Qty = 0},
@@ -65,7 +71,7 @@
 			New MasterInventoryItem With {.Name = "#500  FOOD TRAY 5LB HEARTHSTONE", .Location = "17", .Qty = 0},
 			New MasterInventoryItem With {.Name = "#250  FOOD TRAY  2.5LB HEARTHSTONE", .Location = "18", .Qty = 0},
 			New MasterInventoryItem With {.Name = "C-K516W 16oz WHITE HOT CUP", .Location = "19", .Qty = 0}
-			})
+		})
 
 		db.SaveChanges()
 
@@ -89,21 +95,21 @@
 						  End If
 					  End Function
 
-		For Each Item In db.MasterInventory
-			Item.Transactions.UnionWith({
-				New Transaction With {.Date = GetDate(), .Amount = GetAmount()},
-				New Transaction With {.Date = GetDate(), .Amount = GetAmount()},
-				New Transaction With {.Date = GetDate(), .Amount = GetAmount()},
-				New Transaction With {.Date = GetDate(), .Amount = GetAmount()},
-				New Transaction With {.Date = GetDate(), .Amount = GetAmount()},
-				New Transaction With {.Date = GetDate(), .Amount = GetAmount()},
-				New Transaction With {.Date = GetDate(), .Amount = GetAmount()},
-				New Transaction With {.Date = GetDate(), .Amount = GetAmount()},
-				New Transaction With {.Date = GetDate(), .Amount = GetAmount()},
-				New Transaction With {.Date = GetDate(), .Amount = GetAmount()},
-				New Transaction With {.Date = GetDate(), .Amount = GetAmount()}
-			})
-		Next
+		'For Each Item In db.MasterInventory
+		'	Item.Transactions.UnionWith({
+		'		New Transaction With {.Date = GetDate(), .Amount = GetAmount()},
+		'		New Transaction With {.Date = GetDate(), .Amount = GetAmount()},
+		'		New Transaction With {.Date = GetDate(), .Amount = GetAmount()},
+		'		New Transaction With {.Date = GetDate(), .Amount = GetAmount()},
+		'		New Transaction With {.Date = GetDate(), .Amount = GetAmount()},
+		'		New Transaction With {.Date = GetDate(), .Amount = GetAmount()},
+		'		New Transaction With {.Date = GetDate(), .Amount = GetAmount()},
+		'		New Transaction With {.Date = GetDate(), .Amount = GetAmount()},
+		'		New Transaction With {.Date = GetDate(), .Amount = GetAmount()},
+		'		New Transaction With {.Date = GetDate(), .Amount = GetAmount()},
+		'		New Transaction With {.Date = GetDate(), .Amount = GetAmount()}
+		'	})
+		'Next
 
 		db.SaveChanges()
 	End Sub

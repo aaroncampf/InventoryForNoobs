@@ -18,10 +18,11 @@ Public Class Database
 	''' <summary>Represents the an inventory</summary>
 	Public Overridable Property MasterInventory() As DbSet(Of MasterInventoryItem)
 
-	''' <summary>Represents All transactions made to items in the inventory</summary>
-	Public Overridable Property Transactions() As DbSet(Of Transaction)
+	'''' <summary>Represents All transactions made to items in the inventory</summary>
+	'Public Overridable Property Transactions() As DbSet(Of Transaction)
 
-    Public Overridable Property Customers() As DbSet(Of Customer)
+	Public Overridable Property Customers() As DbSet(Of Customer)
 
-    Public Overridable Property Orders() As DbSet(Of SAHeader)
+	Public Overridable Property Orders() As DbSet(Of Order)
+	Public Property Vendors As System.Data.Entity.DbSet(Of Vendor)
 End Class
