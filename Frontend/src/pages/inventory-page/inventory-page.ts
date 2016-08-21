@@ -13,7 +13,6 @@ import { InventoryTable } from '../../components/inventory-table/inventory-table
 
             <h1> The Inventory </h1>
             <inventory-table></inventory-table>
-
     `
 })
 

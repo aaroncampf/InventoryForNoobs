@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-//import { DialogRef, ModalComponent, CloseGuard } from 'angular2-modal';
+import { DialogRef, ModalComponent } from 'angular2-modal';
 import { BSModalContext } from 'angular2-modal/plugins/bootstrap';
 
 export class CustomModalContext extends BSModalContext {
@@ -48,7 +48,9 @@ export class CustomModalContext extends BSModalContext {
             </div>
         </div>`
 })
-export class CustomModal implements CloseGuard, ModalComponent<CustomModalContext> {
+
+
+export class CustomModal implements ModalComponent<CustomModalContext> {
   context: CustomModalContext;
 
   public wrongAnswer: boolean;
@@ -56,7 +58,7 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
   constructor(public dialog: DialogRef<CustomModalContext>) {
     this.context = dialog.context;
     this.wrongAnswer = true;
-    dialog.setCloseGuard(this);
+    console.log('Something Else then CloseGuard');
   }
 
   onKeyUp(value) {
@@ -73,3 +75,4 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
     return this.wrongAnswer;
   }
 }
+
