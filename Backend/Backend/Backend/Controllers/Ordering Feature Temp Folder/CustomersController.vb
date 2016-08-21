@@ -10,17 +10,17 @@ Namespace Controllers
 
         Private db As New Database
 
-        ''' <summary>Gets all customers</summary>
-        Function GetCustomers() As IQueryable(Of Customer)
-            Return db.MasterInventory
-        End Function
+		''' <summary>Gets all customers</summary>
+		Function GetCustomers() As IQueryable(Of Customer)
+			Return db.MasterInventory
+		End Function
 
-        ''' <summary>
-        ''' Gets a single Customer (GET: api/Customers/5)
-        ''' </summary>
-        ''' <param name="id">The ID of the item you want</param>
-        ''' <returns></returns>
-        <ResponseType(GetType(Customer))>
+		''' <summary>
+		''' Gets a single Customer (GET: api/Customers/5)
+		''' </summary>
+		''' <param name="id">The ID of the item you want</param>
+		''' <returns></returns>
+		<ResponseType(GetType(Customer))>
         Function GetCustomer(ByVal id As Integer) As IHttpActionResult
             Dim Customer As Customer = db.Customers.Find(id)
             If IsNothing(Customer) Then

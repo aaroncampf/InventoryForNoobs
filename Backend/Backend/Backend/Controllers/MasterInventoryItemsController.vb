@@ -11,9 +11,6 @@ Namespace Controllers
 
 		Private db As New Database
 
-
-
-
 		''' <summary>returns all inventory items</summary>
 		Function GetMasterInventory() As IQueryable(Of MasterInventoryItem)
 			Return db.MasterInventory
