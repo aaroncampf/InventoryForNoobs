@@ -10,6 +10,7 @@ export class InventoryData {
   data: any;
 
   constructor(private http: Http) {
+        console.log('data constructor called');
     this.data = null;
   }
 
@@ -18,8 +19,9 @@ export class InventoryData {
     if (this.data) {
       // already loaded data
       return Promise.resolve(this.data);
-
     }
+    
+
     // don't have the data yet
     return new Promise(resolve => {
       this.http.get('http://inventoryfornoobs.azurewebsites.net/api/MasterInventoryItems')

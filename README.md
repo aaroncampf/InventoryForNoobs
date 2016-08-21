@@ -27,9 +27,9 @@ We need to transpile the ts.
 <hr>
 The following method will work from a linux based machine running NodeJS.  
 
-From your terminal window execute the following commands, replace {project directory name} with your folder name that you choose or the default from the project. 
+From your terminal window execute the following commands, replace {project directory name} with your folder name that you choose or the default from the project. Further more, other { } contained words are replaceable. 
 
->   git clone {project directory name} 
+>   git clone https://github.com/aaroncampf/InventoryForNoobs.git {project directory name} 
 <br>
 >   cd /{project directory name}/Frontend/
 <br>

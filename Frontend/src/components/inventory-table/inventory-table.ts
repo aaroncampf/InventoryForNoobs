@@ -45,10 +45,17 @@ export class InventoryTable {
     rows: InventoryRow[] = [];
     title = 'Inventory Table Title';
 
-    constructor(){
+    constructor(public inventoryData: InventoryData ){
         console.log('Inventory Table Constructor Fired');
    // Check for CORS // this.getInventoryData();
+        //  Call data from the DB
+
+        this.inventoryData.loadInventoryData()
+        .then( rows => this.rows = rows )
+        .catch( error => this.error = error )
+        console.dir(this.rows);
         
+    
     for (let i = 0; i < 30; i++) {
         this.rows.push({ 
         id: i,
