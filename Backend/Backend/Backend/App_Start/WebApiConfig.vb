@@ -5,7 +5,9 @@ Imports System.Web.Http
 
 Public Module WebApiConfig
 	Public Sub Register(ByVal config As HttpConfiguration)
-		Dim Cors = New Http.Cors.EnableCorsAttribute("www.example.com", "*", "*")
+		' Change for produciton -rex
+		' http://www.infragistics.com/community/blogs/dhananjay_kumar/archive/2015/08/31/how-to-enable-cors-in-the-asp-net-web-api.aspx
+		Dim Cors = New Http.Cors.EnableCorsAttribute("http://localhost:5901" "*", "*")
 		config.EnableCors(Cors)
 
 
