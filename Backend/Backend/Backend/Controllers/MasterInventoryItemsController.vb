@@ -6,6 +6,9 @@ Imports System.Web.Http.Description
 Imports Newtonsoft.Json.Linq
 
 Namespace Controllers
+''' Rex Was Here!
+ [EnableCors(origins: "http://localhost:5901", headers: "*", methods: "*")]
+''' But Rex Was Not Below Here! ! ! 
 	Public Class MasterInventoryItemsController
 		Inherits ApiController
 
