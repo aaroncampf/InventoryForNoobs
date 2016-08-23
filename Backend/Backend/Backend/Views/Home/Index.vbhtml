@@ -1,17 +1,14 @@
 ﻿<div class="jumbotron">
   
     <div id="header">
-        <h1>W E L C O M E <small>to the noob pack.</small></h1>
+        <h1></h1>
     </div>
     <div>
-        <h2>I Can Has FrontPage? -Rex </h2>
-        <span class="hackd">beware of daemons</span>
+        <h2></h2>
     </div>
 </div>
 <div class="row">
     <span class="col-md-12">
-        <h3> Table Is Comming Soon to a Xplatfor near you ! </h3>
-
     </span>
 </div>
 <div class="row">

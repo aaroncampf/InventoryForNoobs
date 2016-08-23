@@ -2,9 +2,9 @@
 
 Public Module WebApiConfig
 	Public Sub Register(ByVal config As HttpConfiguration)
-		'Dim Cors = New Http.Cors.EnableCorsAttribute("www.example.com", "*", "*")
-		'config.EnableCors(Cors)
-		config.EnableCors()
+		Dim Cors = New Http.Cors.EnableCorsAttribute("*", "*", "*")
+		config.EnableCors(Cors)
+		'config.EnableCors()
 
 
 		' Web API configuration and services
