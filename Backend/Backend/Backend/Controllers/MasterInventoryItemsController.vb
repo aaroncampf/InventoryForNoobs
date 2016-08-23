@@ -6,6 +6,8 @@ Imports System.Web.Http.Description
 Imports Newtonsoft.Json.Linq
 
 Namespace Controllers
+
+	<Cors.EnableCors("http://inventoryfornoobs.azurewebsites.net/", "*", "*")>
 	Public Class MasterInventoryItemsController
 		Inherits ApiController
 
