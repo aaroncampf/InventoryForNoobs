@@ -10,7 +10,6 @@ import { InventoryTable } from '../../components/inventory-table/inventory-table
     directives: [InventoryTable],
     selector: 'inventory-page',
     template: `
-
             <h1> The Inventory </h1>
             <inventory-table></inventory-table>
     `

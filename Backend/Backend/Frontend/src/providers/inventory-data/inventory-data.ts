@@ -15,19 +15,20 @@ export class InventoryData {
   }
 
   loadInventoryData() {
-    console.log('data called');
     if (this.data) {
       // already loaded data
       return Promise.resolve(this.data);
     }
     
 
+    // console.log('data returnedthis.data);
     // don't have the data yet
     return new Promise(resolve => {
       this.http.get('http://inventoryfornoobs.azurewebsites.net/api/MasterInventoryItems')
         .map(res => res.json())
         .subscribe(data => {
           // we've got back the raw data
+          console.log("DIR BELOW!");
           console.dir(data);
           this.data = data;
           resolve(this.data);
