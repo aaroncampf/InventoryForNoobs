@@ -1,10 +1,11 @@
 ﻿<div class="jumbotron">
   
     <div id="header">
-        <h1></h1>
+        <h1>Noobs</h1>
     </div>
     <div>
-        <h2></h2>
+        <h2>Rex Needs An Entry Point</h2>
+        
     </div>
 </div>
 <div class="row">
@@ -13,12 +14,8 @@
 </div>
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>ASP.NET Web API is a framework that makes it easy to build HTTP services that reach
-        a broad range of clients, including browsers and mobile devices. ASP.NET Web API
-        is an ideal platform for building RESTful applications on the .NET Framework.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301870">Learn more &raquo;</a></p>
+      Welcome to the noobs inventory
+      <a href="/../../"
     </div>
     <div class="col-md-4">
         <h2>Get more libraries</h2>
