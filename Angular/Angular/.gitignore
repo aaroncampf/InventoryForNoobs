@@ -3,7 +3,7 @@ dist
 **/*.js
 **/*.js.map
 *.js.map
-*.js
+# *.js
 .vscode
 
 # Logs
