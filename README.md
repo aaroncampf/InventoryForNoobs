@@ -13,8 +13,8 @@ AN INVENTORY MANAGEMENT SYSTEM PROJECT
 
 
 <strong>The Dark Lord of the Dot Net </strong>  aaroncampf@gmail.com
-<thin> && </thin>
-<strong>Rex the i'll Dev </strong> rex@hackd.design
+ && 
+<strong>Rex the 'l Dev </strong> rex@hackd.design
 
 
 
